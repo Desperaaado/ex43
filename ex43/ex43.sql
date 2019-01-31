@@ -47,8 +47,6 @@ UPDATE person SET fname = 'yuxiang' WHERE id in (
     pet.name = 'Peppa'
 );
 
-INSERT INTO person (id, fname, lname, age)
-    VALUES (0, 'bb', 'aa', 27);  /*This should fail.*/
 INSERT OR REPLACE INTO person (id, fname, lname, age)
     VALUES (0, 'bb', 'aa', 27); 
 REPLACE INTO person (id, fname, lname, age)
@@ -68,8 +66,9 @@ INSERT INTO pet  (id, name, breed, age, dead)
 ALTER TABLE person RENAME TO peoples;
 ALTER TABLE peoples ADD COLUMN hatred INTEGER;
 ALTER TABLE peoples RENAME TO person;
+ALTER TABLE person ADD COLUMN height INTEGER;
+ALTER TABLE person ADD COLUMN weight INTEGER;
 
 SELECT * FROM person;
 SELECT * FROM pet;
 SELECT * FROM person_pet;
-
